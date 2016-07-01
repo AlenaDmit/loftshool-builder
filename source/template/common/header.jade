@@ -1,0 +1,33 @@
+.wrapper
+  header.header
+    .container
+      .header__wrap
+        .header__top
+          .header__socials
+            a(href="https://vk.com/alienna" target="_blank").header__socials_link
+              span
+                .fa &#xf189;
+            a(href="https://github.com/AlenaDmit" target="_blank").header__socials_link
+              span
+                .fa &#xf113;
+            a(href="#" target="_blank").header__socials_link
+              span
+                .fa &#xf0e1;
+          .header__menu
+            a(href="#").header__menu_icon
+              span.fa &#xf0c9;
+        .header__author
+          .header__author_img
+            img(src="assets/img/ava.jpg", alt="Дмитриевская Алёна Александровна").header__author_img-item
+          .header__author_name Дмитриевская Алёна
+          .header__author_txt Личный сайт веб-разработчика
+        .header__button-next
+          span.fa.middle__button &#xf078;
+        
+    .header__triangle
+      //- img(src="assets/img/header-triangles.svg" type="image/svg+xml").triangle__svg
+      svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").traingle__myworks
+        polygon(points="0,0   0,86   500.8,86   500.8,40")
+        polygon(points="1000,0   1000,86   500,86   500,40")
+      .header__works
+          .works__txt МОИ РАБОТЫ

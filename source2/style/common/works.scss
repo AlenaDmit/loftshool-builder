@@ -1,0 +1,181 @@
+@import 'common/greating';
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex: 0 0 auto;
+}
+
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr {
+	margin: 0;
+	color:#fff;
+}
+
+footer {
+	background-color: #2f454a;
+	
+}
+
+header {
+	background: url(../img/good_back.jpg);
+	background-size: cover;
+	height: 100%;
+	
+}
+
+.social__links {
+	position: absolute;
+	right: 0;
+	top: 10px;
+
+}
+
+
+
+.author__section {
+	text-align: center;
+	background: url(../img/portfolio_header.svg) bottom center no-repeat;
+    padding-top: 138px;
+
+}
+
+.author__header {
+	font-family: 'robotomedium', sans-serif;
+	font-size: 35px;
+}
+
+.triangle__section {
+  margin-top: 440px;
+}
+
+.traingle {
+  fill:#fff;
+}
+/* ===============MY WORK STYLES============= */
+
+.mywork__heading { 
+font-family: 'BERNIERRegular-Regular', sans-serif;
+font-size: 63px;
+}
+
+.mywork {
+  flex: 1 0 auto;
+}
+
+.mywork__logo {
+	padding-top: 50px;
+	background: url(../img/works_header.svg) center center no-repeat;
+	text-align: center;
+	color: #373e42;
+}
+
+.mywork__description {
+	height: 754px;
+    width: 49%;
+    display: inline-block;
+    background-color: #f0efe9;
+}
+
+.mywork__show-section {
+	height: 754px;
+	width: 49%;
+	display: inline-block;
+}
+
+
+
+.mywork__switch-section {
+	display: inline-block;
+	width: 100%;
+
+}
+      .mywork__switch-section-down {
+      	width: 49%;
+      	height: 227px;
+      	display: inline-block;
+      }
+      .mywork__switch-section-up {
+      	width: 49%;
+      	height: 227px;
+      	display: inline-block;
+      }
+
+
+      .about-me__wrapper {
+      	background:url(../img/bg_about.jpg);
+      	height: 100%;
+      }
+/* =============BOTTOM STYLES============== */
+
+.upper__section {
+	background-color: #2f454a;
+	height: 74px;
+	position: relative;
+}
+
+li.upper__section--item {
+	padding-top: 24px;
+	margin:  0;
+	
+}
+a.upper__section--link {
+	color: #fff;
+	margin: 0 30px;
+	font-family: 'robotomedium',sans-serif;
+	font-size: 16px;
+	
+}
+
+
+
+.upper__section--item__right{
+	padding: 0 10px;
+	}
+
+.botom__section {
+	height: 68px;
+}	
+.bottom__descr {
+	display: inline-block;
+}
+.bottom__descr--p {
+	color: #97a1a4;
+	width: 570px;
+	margin-left: 30px;
+	font-size: 16px;
+	font-family: 'robotolight',sans-serif;
+}
+
+.bottom__descr--p--right {
+	color: #97a1a4;
+	font-family: 'robotolight',sans-serif;
+	font-size: 16px;
+	margin-right: 30px;
+}
+
+.bottom__copyright {
+	float: right;
+}

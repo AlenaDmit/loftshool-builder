@@ -1,11 +1,62 @@
 doctype html
 html
-  include common/_head
-  body
-    <!--[if lt IE 7]>
-    <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
-    <![endif]-->
+	head
+		link(href='assets/css/index.css' rel="stylesheet")
+		meta(charset="UTF-8")
+		meta(name="viewport" content="with=device-with", initial-scale)
+	body
+		<!--[if lt IE 7]>
+		<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+		<![endif]-->
+		
+		.wrapper
+			.main
+				.container
+					a(href="#").main__button 
+						.main__button_text Авторизоваться
+					.main__block_wrap
+						.main__block.flip
+							.main__block_img
+								img(src="assets/img/ava.jpg", alt="Дмитриевская Алёна Александровна").main__block_img-item
+							span.main__block_name Дмитриевская Алёна
+							span.main__block_text Личный сайт веб-разработчика
+							.main__block_social
+								a(href="https://vk.com/alienna" target="_blank").main__block_social-item
+									span.fa &#xf189;
+								a(href="https://github.com/AlenaDmit" target="_blank").main__block_social-item
+									span.fa &#xf113;
+								a(href="#" target="_blank").main__block_social-item
+									span.fa &#xf0e1;
+							.main__block_menu
+								a(href="myworks.html").main__block_menu-item
+									.main__block_menu-text Мои работы
+								a(href="about.html").main__block_menu-item
+									.main__block_menu-text#about Обо мне
+								a(href="#").main__block_menu-item
+									.main__block_menu-text Блог
 
-    .greating
-      .greating_text Hello! I'm your training builder.
-      .greating_picture
+						form.form__login.flip
+							span.form__login_text Авторизуйтесь
+							.input__wrap
+								input(type="text" name="name" placeholder="Логин").form__input.login__name
+								span.input__icon.fa &#xf007;
+							.input__wrap
+								input(type="password" name="password" placeholder="Пароль").form__input.login__password
+								.input__icon.fa &#xf084;	
+							input(type="checkbox" name="checkbox" id="checkbox" hidden).form__login_check
+							label(for="checkbox").form__login_nonrobot Я человек
+							label.form__login_qest Вы точно не робот?
+							input(type="radio" name="name" id="radio1").form__login_radio
+							label(for="radio1").form__login_radio-label Да
+							input(type="radio" name="name" id="radio2").form__login_radio
+							label(for="radio2").form__login_radio-label#label2 Не уверен
+							.form__login_button
+								.form__login_back.form__login_btn На главную
+									.form__login_back-item 
+								button(type="submit").form__login_submit.form__login_btn Войти
+							
+
+					span.main__footer-text © Алёна Дмитриевская | создано с любовью в LoftSchool | 2016
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	script(src="assets/js/app.js")

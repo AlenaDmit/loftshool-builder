@@ -1,0 +1,14 @@
+%clearfix{
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin centered(){
+	top: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+}

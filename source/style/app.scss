@@ -1,5 +1,17 @@
-body {
-  margin: 0;
-}
+// layouts
+@import "common/variables";
+@import "adjustment";
+@import "common/mixins";
+@import "common/fonts";
+@import "common/font-awesome";
+@import "common/font-icomoon";
 
-@import 'common/greating';
+
+// styles
+
+@import "common/header";
+@import "common/footer";
+@import "common/section__form";
+@import "common/slider";
+@import "common/index";
+@import "common/section__skills";
