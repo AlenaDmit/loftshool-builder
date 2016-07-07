@@ -10,7 +10,7 @@ $skills-mt: -180px;
 	width: 100%;
 	min-height: $skills-height;
 	margin-top: $skills-mt;
-	position: absolute;
+	position: relative;
 	@extend %clearfix;
 }
 
