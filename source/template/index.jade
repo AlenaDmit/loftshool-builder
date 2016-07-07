@@ -11,6 +11,11 @@ html
 		
 		.wrapper
 			.main
+				video(autoplay loop muted class="bgvideo" id="bgvideo")
+					source(src="assets/img/night.mp4" type="video/mp4")
+				.parallax
+					.parallax__layer
+						img(src="assets/img/bg_layer.png")
 				.container
 					a(href="#").main__button 
 						.main__button_text Авторизоваться
