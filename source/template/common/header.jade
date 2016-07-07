@@ -25,9 +25,18 @@
           span.fa.middle__button &#xf078;
         
     .header__triangle
-      //- img(src="assets/img/header-triangles.svg" type="image/svg+xml").triangle__svg
       svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none").traingle__myworks
-        polygon(points="0,0   0,86   500.8,86   500.8,40")
-        polygon(points="1000,0   1000,86   500,86   500,40")
-      .header__works
-          .works__txt МОИ РАБОТЫ
+        polygon(points="0,0   0,86   500.8,86   500.8,40").polygon__left
+        polygon(points="1000,0   1000,86   500,86   500,40").polygon__right
+    .header__works
+      svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 171.5 132.5" preserveaspectratio="none").header__works_stars2
+        circle(cx="4.25" cy="92.25" r="4.25")
+        circle(cx="48.25" cy="128.25" r="4.25")
+        circle(cx="72.75" cy="52.75" r="4.75")
+        circle(cx="8.25" cy="22.25" r="4.25")
+        circle(cx="117.25" cy="96.25" r="2.75")
+        circle(cx="126.25" cy="41.25" r="1.911")
+        circle(cx="167.25" cy="4.25" r="4.25")
+        polyline(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="72.75,52.75 117.25,96.25 4.25,92.25 48.25,128.25 117.25,96.25 167.25,4.25 126.25,41.25 72.75,54.334 8.25,22.25").stars2_line
+        line(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="48.25" y1="131.334" x2="8.5" y2="24.339").stars2_line
+    .works__txt= header__txt
