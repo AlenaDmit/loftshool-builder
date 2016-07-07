@@ -5,7 +5,8 @@ module.exports = function() {
     return $.gulp.src([
     	'./source/style/app.scss',
     	'./source/style/index.scss',
-    	'./source/style/myworks.scss'
+    	'./source/style/myworks.scss',
+    	'./source/style/about.scss',
     	])
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass()).on('error', $.gp.notify.onError({ title: 'Style' }))
