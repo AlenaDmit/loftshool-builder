@@ -1,0 +1,47 @@
+// layouts
+@import "common/variables";
+@import "adjustment";
+@import "common/mixins";
+@import "common/fonts";
+@import "common/font-awesome";
+@import "common/font-icomoon";
+
+//styles
+@import "common/header";
+@import "common/section__skills";
+@import "common/footer";
+
+
+
+.header__triangle{
+	opacity: 1;
+}
+
+.polygon__left{
+	fill: #f2f0e8;
+}
+
+.polygon__right{
+	fill: #eae8e2;
+}
+
+.header__works{
+	opacity: 1;
+	fill: #dbe0e6;
+	bottom: -130px;
+	left: 100px;
+	text-align: left;
+}
+
+.header__works_stars2{
+	margin-left: -20px;
+}
+
+.stars2_line{
+	stroke: #dbe0e6;
+}
+
+.works__txt{
+	color: $grey;
+	text-align: left;
+}

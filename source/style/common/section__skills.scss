@@ -1,6 +1,67 @@
+// variables
+$skills-height: 855px;
+$skills-mt: -180px;
+
+.skills__wrapper {
+	min-height: $skills-height + $skills-mt;
+}
+
 .section__skills{
 	width: 100%;
-	min-height: 855px;
-	background: linear-gradient(to right, #f2f0e8 0%,#f2f0e8 50%,#eae8e2 50%,#f2f0e8 100%);
-	// background-position: 	
+	min-height: $skills-height;
+	margin-top: $skills-mt;
+	position: absolute;
+	@extend %clearfix;
+}
+
+.section__skills_left{
+	background-color: #f2f0e8;
+	width: 50%;
+	padding-top: 20px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	min-height: inherit;
+	float: left;
+	text-align: right;
+}
+
+.section__skills_right{
+	background-color: #eae8e2;
+	width: 50%;
+	padding-top: 20px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	min-height: inherit;
+	float: right;
+	text-align: left;
+}
+
+.left__wrap{
+	width: 45%;
+	text-align: left;
+	float: right;
+}
+
+.left__wrap-img{
+	height: 360px;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.left__wrap-header{
+	text-transform: uppercase;
+	@include sansus();
+	font-size: 35px;
+	margin-bottom: 40px;
+	text-align: center;
+
+	&:after{
+		content: "";
+		display: block;
+		width: 90px;
+		height: 3px;
+		background-color: #9c9d9f;
+		transform: translateX(50%);
+		left: 50%;
+	}
 }
