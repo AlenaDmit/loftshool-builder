@@ -11,8 +11,6 @@
 @import "common/section__skills";
 @import "common/footer";
 
-
-
 .header__triangle{
 	opacity: 1;
 }
@@ -26,15 +24,12 @@
 }
 
 .header__works{
-	opacity: 1;
-	fill: #dbe0e6;
-	bottom: -130px;
-	left: 100px;
-	text-align: left;
+	display: none;
 }
 
 .header__works_stars2{
-	margin-left: -20px;
+	margin-left: -37px;
+	left: 0;
 }
 
 .stars2_line{
