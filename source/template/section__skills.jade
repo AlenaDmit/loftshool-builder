@@ -1,9 +1,38 @@
 .wrapper.skills__wrapper
 	.section__skills
 		.section__skills_left
+			.header__works_about
+				svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 171.5 132.5" preserveaspectratio="none").header__works_stars2
+					circle(cx="4.25" cy="92.25" r="4.25")
+					circle(cx="48.25" cy="128.25" r="4.25")
+					circle(cx="72.75" cy="52.75" r="4.75")
+					circle(cx="8.25" cy="22.25" r="4.25")
+					circle(cx="117.25" cy="96.25" r="2.75")
+					circle(cx="126.25" cy="41.25" r="1.911")
+					circle(cx="167.25" cy="4.25" r="4.25")
+					polyline(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="72.75,52.75 117.25,96.25 4.25,92.25 48.25,128.25 117.25,96.25 167.25,4.25 126.25,41.25 72.75,54.334 8.25,22.25").stars2_line
+					line(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="48.25" y1="131.334" x2="8.5" y2="24.339").stars2_line
+				.works__txt= header__txt
 			.left__wrap
 				img(src="assets/img/ava.jpg").left__wrap-img
 				.left__wrap-header Кто я
 				.left__wrap-text Я веб разработчик из Санкт-Петербурга. Мне 22 года. Я учусь разрабатывать современные сайты и приложения. Мне нравится делать интересные и современные проекты.
 				.left__wrap-text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-		.section__skills_right section right
+		.section__skills_right
+			.right__header Чем я могу быть вам полезна
+			.right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+			.right__svg
+
+			-var frontSkills = [["HTML 5", 70], ["CSS", 75], ["JavaScript & jQuery", 20]]
+			-var backSkills= [["PHP",20] ,["mySQL", 10], ["NodeJS & npm", 15], ["MongoDB", 78]]
+			-var workFlowSkills= [["Git", 95],["Gulp", 80],["Bower", 55]]
+
+			each group in [ ["Frontend", frontSkills], ["Backend", backSkills], ["WorkFlow", workFlowSkills]]
+				.group
+					.group__title= group[0]
+					each item in group[1]
+						.group__item
+							span.item__title= item[0]
+							svg(viewBox="0 0 120 120" class="piechart" width="125")
+								circle(fill="none" stroke-width="20" stroke-dasharray="314.159265" stroke-dashoffset="0" cx="60" cy="60" r="50" transform="rotate(-90, 60, 60)" class="circle__bg")
+								circle(data-percentage="100.663706" fill="none" stroke-width="20" stroke-dasharray="314.159265" stroke-dashoffset=314-314*item[1]*0.01 cx="60" cy="60" r="50" transform="rotate(-90, 60, 60)" class="circle__fill")
