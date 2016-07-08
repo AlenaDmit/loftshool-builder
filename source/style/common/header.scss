@@ -127,9 +127,10 @@
 }
 
 .middle__button {
-	// position: absolute;
+	position: absolute;
+	z-index: 1;
 	// left: 50%;
-	// margin-left: -30px; 
+	margin: 0 0 -15px 0; 
 }
 
 .header__head{
