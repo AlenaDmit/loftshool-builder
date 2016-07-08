@@ -10,58 +10,142 @@ $skills-mt: -180px;
 	width: 100%;
 	min-height: $skills-height;
 	margin-top: $skills-mt;
-	position: absolute;
+	position: relative;
 	@extend %clearfix;
 }
 
 .section__skills_left{
 	background-color: #f2f0e8;
 	width: 50%;
-	padding-top: 20px;
-	padding-right: 20px;
+	position: absolute;
+	padding-top: 30px;
+	padding-right: 30px;
 	box-sizing: border-box;
-	min-height: inherit;
+	height: 100%;
 	float: left;
 	text-align: right;
 }
 
-.section__skills_right{
-	background-color: #eae8e2;
-	width: 50%;
-	padding-top: 20px;
-	padding-left: 20px;
-	box-sizing: border-box;
-	min-height: inherit;
-	float: right;
-	text-align: left;
-}
 
 .left__wrap{
-	width: 45%;
+	width: 50%;
 	text-align: left;
 	float: right;
+}
+
+.header__works_about{
+	height: 180px;
+	width: inherit;
+	position: absolute;
+	left: 100px;
+	top: -50px;
+	fill: #dbe0e6;
 }
 
 .left__wrap-img{
-	height: 360px;
+	// max-height: 360px;
 	width: 100%;
-	margin-bottom: 40px;
+	margin: auto;
+	display: block;
+	margin-bottom: 30px;
 }
 
 .left__wrap-header{
 	text-transform: uppercase;
 	@include sansus();
 	font-size: 35px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	text-align: center;
+	color: $grey-blue;
 
 	&:after{
 		content: "";
 		display: block;
 		width: 90px;
 		height: 3px;
+		margin: auto;
+		margin-top: 20px;
 		background-color: #9c9d9f;
-		transform: translateX(50%);
-		left: 50%;
 	}
+}
+
+.left__wrap-text{
+	margin-bottom: 15px;
+	color: $grey-blue;
+
+	&:last-child{
+		margin-bottom: 0px;
+	}
+}
+
+.section__skills_right{
+	background-color: #eae8e2;
+	width: 50%;
+	padding-top: 30px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	min-height: inherit;
+	float: right;
+	text-align: left;
+	color: $grey-blue;
+}
+
+.right__header{
+	font-size: 35px;
+	@include sansus();
+	text-transform: uppercase;
+	text-align: center;
+	max-width: 280px;
+	margin: auto;
+	margin-bottom: 30px;
+
+	&:after{
+		content: "";
+		display: block;
+		width: 90px;
+		height: 3px;
+		margin: auto;
+		margin-top: 20px;
+		background-color: #9c9d9f;
+	}
+}
+
+.right__text {
+	margin: 0 0 50px 0; 
+}
+
+.right__svg{
+
+}
+
+.group{
+	margin: 0 0 30px 0;
+}
+.group__title{
+	@include robotoM();
+	font-size: 28px;
+	margin: 0 0 15px 0;
+}
+
+.group__item{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	margin: 0 40px 15px 0;
+}
+
+.item__title{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.circle__bg{
+	stroke: $circle-bg;
+}
+
+.circle__fill{
+	stroke: $blue;
+	transition: stroke-dashoffset 1s;
 }
