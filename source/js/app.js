@@ -74,37 +74,19 @@ function flipInit(argument) { // main block flip
 	});
 }
 
-$(document).ready(function() {
-	createMap();
-});
 
-function createMap(){
-	ymaps.ready(init);
-    
-    function init(){
-		var myMap = new ymaps.Map("map", {
-        	center: [59.89106259461844, 30.450020485993274], 
-        	zoom: 12,
-        	controls: [],
-
-        });
-
-        myPlacemark = new ymaps.Placemark(
-        	[59.89666897024405, 30.392342263337017], 
-        	{ 
-        		hintContent: 'Москва!', 
-        		balloonContent: 'Столица России' 
-        	},{
-        		iconLayout: 'default#image',
-        		iconImageHref: 'images/marker.png',
-     			iconImageSize: [42, 58],
-        	});
-
-        myMap.geoObjects.add(myPlacemark);
-        myMap.controls.add('zoomControl');
-        myMap.behaviors.disable('scrollZoom');
+function initMap() {
+	var mapOptions = {
+    zoom: 12,
+    center: {lat: 59.9042161, lng: 30.1716925},
+    disableDefaultUI: true,
+    scrollwheel: false,
+    styles: [{"featureType":"administrative","elementType":"labels.text","stylers":[{"saturation":"-17"},{"lightness":"21"},{"gamma":"1.16"},{"weight":"2.35"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"gamma":"1"},{"lightness":"100"},{"color":"#ffffff"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#004d90"},{"visibility":"on"}]}]
 	}
+ 	
+ 	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
+
 
 
 mainBlockApp();
