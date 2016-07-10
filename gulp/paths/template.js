@@ -3,5 +3,6 @@
 module.exports = [
 	'./source/template/myworks.jade',
  	'./source/template/index.jade',
- 	'./source/template/about.jade'
+ 	'./source/template/about.jade',
+ 	'./source/template/blog.jade'
 ];

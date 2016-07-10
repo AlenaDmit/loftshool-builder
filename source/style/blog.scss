@@ -1,0 +1,61 @@
+// layouts
+@import "common/variables";
+@import "adjustment";
+@import "common/mixins";
+@import "common/fonts";
+@import "common/font-awesome";
+@import "common/font-icomoon";
+
+//styles
+@import "common/header";
+@import "common/section__blog";
+@import "common/footer";
+
+.header__triangle{
+	opacity: 1;
+}
+
+.polygon__left{
+	fill: #faf8f0;
+}
+
+.polygon__right{
+	fill: #faf8f0;
+}
+
+.header__works{
+	// display: none;
+	top: 400px;
+	bottom: none;
+	opacity: .2;
+}
+
+.header__works_stars2{
+	display: none;
+}
+
+// .stars2_line{
+// 	stroke: #dbe0e6;
+// }
+
+.works__txt{
+	top: 365px;
+
+	&:after{
+		content: "Статьи, которые я стырила";
+		text-transform: none;
+		@include robotoR();
+		font-size: 16px;
+		color: white;
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		color: white;
+	}
+}
+
+.header__button-next{
+	display: none;
+}

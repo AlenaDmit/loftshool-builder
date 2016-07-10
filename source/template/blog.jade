@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		link(href='assets/css/preload.css' rel="stylesheet")
+		link(href='assets/css/blog.css' rel="stylesheet")
+	body
+		<!--[if lt IE 7]>
+		<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
+		<![endif]-->
+		
+		.body__wrap
+			include preload
+
+			-var header__txt = "блог"
+			
+			include common/header
+			
+			include section__blog
+
+			include common/footer
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+	script(src="assets/js/jquery.waypoints.min.js")
+	script(src="assets/js/preload.js")
+	script(src="assets/js/blog.js")
+	script(src="assets/js/app.js")

@@ -8,7 +8,11 @@ global.$ = {
     template: require('./gulp/paths/template.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
     cssFoundation: require('./gulp/paths/css.foundation.js'),
-    app: require('./gulp/paths/app.js')
+    app: require('./gulp/paths/app.js'),
+    wp1: require('./gulp/paths/wp1.js'),
+    wp2: require('./gulp/paths/wp2.js'),
+    blog: require('./gulp/paths/blog.js'),
+    preload: require('./gulp/paths/preload.js'),
   },
   gulp: require('gulp'),
   rimraf: require('rimraf'),
@@ -27,6 +31,10 @@ $.gulp.task('default', $.gulp.series(
     'jade',
     'js.foundation',
     'js.process',
+    'js.process1',
+    'js.process2',
+    'js.blog',
+    'js.preload',
     'copy.image',
     'copy.fonts',
     'css.foundation'
