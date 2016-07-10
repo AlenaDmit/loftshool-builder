@@ -1,7 +1,7 @@
 .header{
 	min-height: 750px;
 	height: 100vh;
-	max-height: 800px;
+	// max-height: 800px;
 	background-image: url("../img/bg.png");
 	width: 100%;
 	background-repeat: no-repeat;
@@ -112,24 +112,29 @@
 
 .header__button-next{
 	font-size: 30px;
-	color: rgba(white, 0.5);
+	// color: rgba(white, 0.5);
 	width: 100%;
 	margin: auto;
-	// position: absolute;
 	text-align: center;
 	transition: color .3s;
 	z-index: 999;
 	cursor: pointer;
 
-	&:hover{
-		color: $blue;
+	a{
+		color: rgba(white, 0.5);
+		&:visited{
+			color: rgba(white, 0.5);
+		}
+		&:hover{
+			color: $blue;
+		}
 	}
+
 }
 
 .middle__button {
 	position: absolute;
 	z-index: 1;
-	// left: 50%;
 	margin: 0 0 0 -15px; 
 }
 
