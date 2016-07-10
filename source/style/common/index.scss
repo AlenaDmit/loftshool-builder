@@ -29,7 +29,7 @@ video{
 .parallax__layer{
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: 120%;
 	height: 100%;
 
 	img{
@@ -102,6 +102,13 @@ video{
 		font-size: 16px;
 		margin: 0 0 35px 0;
 	}
+}
+
+.main__block.active{
+	transform: rotateX(0deg);
+	transform-origin: top;
+	opacity: 1;
+	transtion: opacity .5s, transform .5s;
 }
 
 .main__block_img{

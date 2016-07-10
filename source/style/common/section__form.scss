@@ -171,3 +171,13 @@
 	color: rgba(white, .3);
 	transition: .3s;
 }
+
+.form__top{
+	color: rgba(white, 0.5);
+		&:visited{
+			color: rgba(white, 0.5);
+		}
+		&:hover{
+			color: $blue;
+		}
+}

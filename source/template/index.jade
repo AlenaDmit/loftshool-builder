@@ -1,6 +1,7 @@
 doctype html
 html
 	head
+		link(href='assets/css/preload.css' rel="stylesheet")
 		link(href='assets/css/index.css' rel="stylesheet")
 		meta(charset="UTF-8")
 		meta(name="viewport" content="with=device-with", initial-scale)
@@ -8,7 +9,7 @@ html
 		<!--[if lt IE 7]>
 		<p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
 		<![endif]-->
-		
+		include preload
 		.wrapper
 			.main
 				video(autoplay loop muted class="bgvideo" id="bgvideo")
@@ -37,7 +38,7 @@ html
 									.main__block_menu-text Мои работы
 								a(href="about.html").main__block_menu-item
 									.main__block_menu-text#about Обо мне
-								a(href="#").main__block_menu-item
+								a(href="blog.html").main__block_menu-item
 									.main__block_menu-text Блог
 
 						form.form__login.flip
@@ -64,4 +65,5 @@ html
 					span.main__footer-text © Алёна Дмитриевская | создано с любовью в LoftSchool | 2016
 
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+	script(src="assets/js/preload.js")
 	script(src="assets/js/app.js")

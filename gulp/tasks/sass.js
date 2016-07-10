@@ -6,7 +6,9 @@ module.exports = function() {
     	'./source/style/app.scss',
     	'./source/style/index.scss',
     	'./source/style/myworks.scss',
-    	'./source/style/about.scss',
+      './source/style/about.scss',
+      './source/style/blog.scss',
+    	'./source/style/preload.scss',
     	])
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass()).on('error', $.gp.notify.onError({ title: 'Style' }))
