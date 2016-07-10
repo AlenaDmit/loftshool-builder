@@ -1,6 +1,7 @@
 doctype html
 html
 	head
+		link(href='assets/css/preload.css' rel="stylesheet")
 		link(href='assets/css/myworks.css' rel="stylesheet")
 	body
 		<!--[if lt IE 7]>
@@ -8,6 +9,8 @@ html
 		<![endif]-->
 		
 		.body__wrap
+			include preload
+
 			-var header__txt = "мои работы"
 
 			include common/header
@@ -17,3 +20,7 @@ html
 			include section__form
 
 			include common/footer
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+	script(src="assets/js/preload.js")
+	script(src="assets/js/app.js")

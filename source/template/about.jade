@@ -1,6 +1,7 @@
 doctype html
 html
 	head
+		link(href='assets/css/preload.css' rel="stylesheet")
 		link(href='assets/css/about.css' rel="stylesheet")
 	body
 		<!--[if lt IE 7]>
@@ -8,7 +9,10 @@ html
 		<![endif]-->
 		
 		.body__wrap
+			include preload
+
 			-var header__txt = "обо мне"
+
 			include common/header
 			
 			include section__skills
@@ -18,5 +22,6 @@ html
 			include common/footer
 
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+	script(src="assets/js/preload.js")
 	script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSoGodlJIeaZm-bEUP3jrZc1VU-jPeCsI&callback=initMap")
 	script(src="assets/js/app.js")
