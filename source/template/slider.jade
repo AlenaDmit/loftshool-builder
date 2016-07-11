@@ -1,18 +1,18 @@
-.wrapper#slider
+.slider__wrap#slider
 	section.slider
 		.slider__left
+			.slider__display
+				img(src="assets/img/site1.png")
 			.slider__left__text
-				.slider__left__text_head.slider__left_center Сайт школы онлайн образования
-				.slider__left__text_line.slider__left_center _________
-				.slider__left__text_text.slider__left_center HTML, CSS, JAVASCRIPT
-				a(hfref="#").slider__left__text_button.slider__left_center
+				.slider__left__text_head Сайт школы онлайн образования
+				.slider__left__text_text HTML, CSS, JAVASCRIPT
+				a(hfref="#").slider__left__text_button
 					span.fa &#xf0c1; 
 					.slider__left__text_button-item Посмотреть сайт
 		.slider__right
-			.slider__right_slide
-				img(src="assets/img/site1.png").slider__right_slide_img
-			.slider__right_controls
-				.slider__control.slider__control_up
-					.control__up_img.control__img
-				.slider__control.slider__control_down
-					.control__down_img.control__img
+
+			.slider__controls
+				a(hfref="#").slider__controls-item.slider__control_up
+					img(src="assets/img/site2.png")
+				a(hfref="#").slider__controls-item.slider__control_down
+					img(src="assets/img/site3.png")

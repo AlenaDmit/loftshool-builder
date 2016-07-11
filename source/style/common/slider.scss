@@ -1,8 +1,24 @@
+@mixin centered() {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.slider__wrap{
+}
+
 .slider{
 	height: 100vh;
-	max-height: 750px;
-	@extend %clearfix;
 	width: 100%;
+	position: relative;
+	min-height: 650px;
+	// height: 100%;
+	@extend %clearfix;
+	// width: 100%;
 }
 
 .slider__left{
@@ -10,22 +26,31 @@
 	background-color: #f2f0e8;
 	width: 50%;
 	height: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	text-align: center;
+	position: relative;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+
+		@include tablets {
+			display: none;
+		}
+	}
+
+	@include tablets {
+		float: none;
+		width: 100%;
+	}
 }
 
 .slider__left__text{
-	width: inherit;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.slider__left_center{
-	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 90%;
 }
 
 .slider__left__text_head{
@@ -33,14 +58,26 @@
 	@include sansus();
 	color: #474b57;	
 	text-transform: uppercase;
+	margin-bottom: 30px;
+	margin-top: 30px;
+
+	&:after{
+		content: '';
+		display: block;
+		width: 90px;
+		height: 3px;
+		background-color: #9c9c9a;
+		margin: auto;
+		margin-top: 30px;
+	}
 }
 
-.slider__left__text_line{
-	color: #9c9d9f;
-	font-size: 20px;
-	@include robotoB();
-	margin-bottom: 20px;
-}
+// .slider__left__text_line{
+// 	color: #9c9d9f;
+// 	font-size: 20px;
+// 	@include robotoB();
+// 	margin-bottom: 20px;
+// }
 
 .slider__left__text_text{
 	color: $blue;
@@ -55,6 +92,7 @@
 	padding: 13px;
 	cursor: pointer;
 	margin: auto; 
+	display: inline-block;
 	
 	&>span{
 		display: inline-block;
@@ -71,41 +109,65 @@
 
 
 .slider__right{
-	float: right;
+	float: left;
 	@extend %clearfix;
 	width: 50%;
 	height: 100%;
 	background-color: #e3e2de;
 	position: relative;
+
+	@include tablets {
+		float: none;
+		width: 100%;
+		height: auto;
+		position: absolute;
+	}
 }
 
-.slider__right_slide{
-	height: 65%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.slider__right_slide_img{
-	height: 70%;
-}
-
-.slider__right_controls{
-	height: 225px;
-	width: 100%;
-	display: flex;
+.slider__controls{
+	height: 30%;
 	position: absolute;
 	bottom: 0;
+	left: 0;
+	right: 0;
 
+	@include tablets {
+		position: absolute;
+		height: 220px;
+	}
 }
 
-.slider__control{
-	width: 100%;
+.slider__controls-item{
+	float: left;
+	width: 50%;
 	height: 100%;
+	display: block;
 	position: relative;
+
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	width: 45px;
+	// 	height: 30px;
+	// 	z-index: 1;
+	// 	@include centered();
+	// }
+
+	// &:before {
+	// 	content: "";
+	// 	@include centered();
+	// 	background: rgba(182,180,174,0.7);
+	// 	z-index: 1;
+	// }
+
+	img {
+		max-width: 90%;
+		max-height: 90%;
+		@include centered();
+	}	
 }
-.slider__control{
+
+.slider__controls-item{
 	&:before{
 		font-family: "FontAwesome";
 		font-size: 40px;
@@ -115,11 +177,9 @@
 		width: 100%;
 		color: white;
 		text-align: center;
-		line-height: 225px;
-		vertical-align: middle;
+		z-index: 9999;
 		background-color: rgba(black,.3);
 		transition: background-color .3s, font-size .3s;
-		
 	}
 
 }
@@ -127,33 +187,41 @@
 .slider__control_up:before{
 	content: "\f077";
 	position: absolute;
-	&:hover {
-			color: red;
-		}
 }
 .slider__control_down:before{
 	content: "\f078";
 	position: absolute;
 }
 
-.slider__control:hover:before{
+.slider__controls-item:hover:before{
 	cursor: pointer;
 	background-color: rgba(black, .5);
 	font-size: 50px;
 }
 
-.control__img{
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	height: 100%;
-}
+.slider__display {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 70%;
 
-.control__up_img{
-	background-image: url("../img/site2.png");
-}
+	@include tablets {
+		position: static;
+		height: auto;
+	}
 
-.control__down_img{
-	background-image: url("../img/site3.png");
-}
+	img {
+		max-width: 90%;
+		max-height: 90%;
+		@include centered();
 
+		@include tablets {
+			position: static;
+			padding-top: 40px;
+			max-width: 70%;
+			max-height: 70%;
+		}
+	}
+}
