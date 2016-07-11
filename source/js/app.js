@@ -1,5 +1,4 @@
 $(document).ready(function () {		// parallax
-
   var layer = $('.parallax').find('.parallax__layer'); // Выбираем все parallax__layer в объект
   // console.log(layer);
   layer.map(function (key, value) { // Проходимся по всем элементам объекта
@@ -30,7 +29,28 @@ $(document).ready(function () {		// parallax
       });
     });
   });
-})
+
+
+//menu appearence
+	$(".header__menu").click(function(){
+		
+
+		if ($(".icon__item").hasClass("clicked")){
+			$(".menu__items").css("display", "none");
+			$(".icon__item").removeClass("clicked");
+			$(".layer_left").removeClass("active");
+			$(".layer_right").removeClass("active");
+			setTimeout(function(){$(".menu__layer_wrap").removeClass("active")}, 100);
+		}
+		else{
+			$(".icon__item").addClass("clicked");
+			$(".layer_left").addClass("active"); //
+			$(".layer_right").addClass("active");
+			$(".menu__layer_wrap").addClass("active");
+			setTimeout(function(){$(".menu__items").fadeIn("300")}, 500);
+		}
+	});
+
 
 function scroll(from,to){     // scroll to top/down
 	$(from).click(function (event) {
@@ -40,22 +60,18 @@ function scroll(from,to){     // scroll to top/down
 		});
 };
 
+
+//scrolls
 scroll($('.middle__button'), $('#slider'));
 scroll($('.form__top'), $('#header'));
 scroll($('.middle__button'), $('#slider'));
 
 
 
-function mainBlockApp() {	//main block vertical appearence
-	$(".main__block").css({
-		transform: 'rotateX(0deg)',
-		transformOrigin: 'top',
-		opacity: '1',
-		transition: 'opacity .5s, transform .5s'
-	});
-}
+})
 
-function flipInit(argument) { // main block flip 
+ // main block flip 
+function flipInit(argument) {
 	$(".main__button").click(function(event) {
 
 		$(".main__block_wrap").css('perspective', 'none');

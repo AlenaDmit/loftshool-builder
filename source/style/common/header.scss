@@ -42,20 +42,50 @@
 }
 
 .header__menu{
-	float: right;
+	// float: right;
+	position: absolute;
+	right: 20px;
+	z-index: 10;
+	&:hover{
+		cursor: pointer;
+		.icon__item{
+			background-color: $blue;		
+		}
+	}
 }
 
-.header__menu_icon{
-	color: rgba(white, .8);
+.icon__item{
+	// color: rgba(white, .8);
 	font-size: 30px;
 	display: block;
 	width: 30px;
-	margin: auto;
-	transition: color .3s;
-
-	&:hover{
-		color: $blue;
+	height: 5px;
+	margin: 0 0 5px 0;
+	
+	&:last-child{
+		margin: 0 0 0 0;
 	}
+	
+	background-color: rgba(white, .8);
+	border-radius: 2px;
+	transition: background-color .5s, opacity 1s, transform .5s;
+	
+	&.clicked{
+		margin-left: -2px;
+		transition: transform .5s;
+		&:first-child{
+			transform: translateY(-1px) rotateZ(-45deg) translateX(-50%) ;
+		}
+
+		&:nth-child(2){
+			opacity: 0;
+		}
+
+		&:last-child{
+			transform: rotateZ(45deg) translateX(-50%) ;
+		}
+	}
+
 }
 
 .header__author{
@@ -94,7 +124,7 @@
 	max-height: 140px;
 	max-width: 140px;
 	border-radius: 50%;
-	z-index: 999;
+	// z-index: 999;
 }
 
 .header__author_name{
@@ -117,7 +147,7 @@
 	margin: auto;
 	text-align: center;
 	transition: color .3s;
-	z-index: 999;
+	// z-index: 999;
 	cursor: pointer;
 
 	a{
