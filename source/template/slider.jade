@@ -1,18 +1,24 @@
 .slider__wrap#slider
-	section.slider.hide
+	section.slider
 		.slider__left
 			.slider__display
-				img(src="assets/img/site1.png")
-			.slider__left__text
+				img(src="assets/img/site1.png").hide
+			.slider__left__text.hide
 				.slider__left__text_head Сайт школы онлайн образования
 				.slider__left__text_text HTML, CSS, JAVASCRIPT
 				a(hfref="#").slider__left__text_button
 					span.fa &#xf0c1; 
 					.slider__left__text_button-item Посмотреть сайт
-		.slider__right
+		.slider__right.hide
 
-			.slider__controls
+			.slider__controls.hide
 				a(hfref="#").slider__controls-item.slider__control_up
-					img(src="assets/img/site2.png")
+					ul.control__up-list
+						li.control__up-item.control_active
+							img(src="assets/img/site1.png").hide
+						li.control__up-item
+							img(src="assets/img/site2.png").hide
+						li.control__up-item
+							img(src="assets/img/site3.png")
 				a(hfref="#").slider__controls-item.slider__control_down
 					img(src="assets/img/site3.png")

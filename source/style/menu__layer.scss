@@ -39,17 +39,30 @@
 
 .menu__items{
 	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	position: absolute;
-	z-index: 99999;
+	z-index: 10;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	min-width: 350px;
+	min-height: 400px;
 	color: black;
 }
 .menu_item{
 	
 	transition: font-size .1s;
 	font-size: 20px;
+	transform: scale(0);
 	text-align: center;
-	margin: 0 0 20px 0;
+	text-transform: uppercase;
+
+	
+	&.active{
+
+		transition: transform .5s;
+		transform: scale(1);
+	}
 }

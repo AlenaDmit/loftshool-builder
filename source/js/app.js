@@ -49,6 +49,7 @@ $(document).ready(function () {
   });
 
 
+
 //menu appearence
 	$(".header__menu").click(function(){
 		
@@ -56,6 +57,7 @@ $(document).ready(function () {
 		if ($(".icon__item").hasClass("clicked")){
 			$(".icon__item").removeClass("clicked");
 			$(".menu__items").css("display", "none");
+			$(".menu_item").removeClass("active");
 			$(".layer_left").removeClass("active");
 			$(".layer_right").removeClass("active");
 			setTimeout(function(){$(".menu__layer_wrap").removeClass("active")}, 100);
@@ -65,9 +67,19 @@ $(document).ready(function () {
 			$(".layer_left").addClass("active"); //
 			$(".layer_right").addClass("active");
 			$(".menu__layer_wrap").addClass("active");
-			setTimeout(function(){$(".menu__items").fadeIn("300")}, 500);
+			setTimeout(function(){
+				$(".menu__items").css("display", "flex");
+				$(".menu_item").each(function(i){
+					$(this).css("transition-delay", "."+i+"s");
+				});
+				setTimeout(function(){
+					$(".menu_item").addClass("active");
+				},10);
+			}
+			, 500);
 		}
 	});
+
 
 
 function scroll(from,to){     // scroll to top/down
@@ -161,6 +173,22 @@ function initMap() {	// google map
 }
 
 
+// function slider(){
+// 	$('.slider__control_up').on('click'(function(e) {
+// 		e.preventDefault();
+
+// 		var $this = $(this),
+// 			container = $this.closest('.slider__controls'),
+// 			items = container.find('.control__up-item'),
+// 			activeItem = container.find('selector')
+// 	});)
+
+
+// }();
+
 
 // mainBlockApp();
 flipInit();
+
+
+

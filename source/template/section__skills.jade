@@ -13,14 +13,14 @@
 					polyline(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="72.75,52.75 117.25,96.25 4.25,92.25 48.25,128.25 117.25,96.25 167.25,4.25 126.25,41.25 72.75,54.334 8.25,22.25").stars2_line
 					line(fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="48.25" y1="131.334" x2="8.5" y2="24.339").stars2_line
 				.works__txt= header__txt
-			.left__wrap
+			.left__wrap.hide
 				img(src="assets/img/ava.jpg").left__wrap-img
 				.left__wrap-header Кто я
 				.left__wrap-text Я веб разработчик из Санкт-Петербурга. Мне 22 года. Я учусь разрабатывать современные сайты и приложения. Мне нравится делать интересные и современные проекты.
 				.left__wrap-text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 		.section__skills_right
-			.right__header Чем я могу быть вам полезна
-			.right__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+			.right__header.hide Чем я могу быть вам полезна
+			.right__text.hide Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 			.right__svg
 
 			-var frontSkills = [["HTML 5", 70], ["CSS", 75], ["JavaScript & jQuery", 20]]
@@ -28,7 +28,7 @@
 			-var workFlowSkills= [["Git", 95],["Gulp", 80],["Bower", 55]]
 
 			each group in [ ["Frontend", frontSkills], ["Backend", backSkills], ["WorkFlow", workFlowSkills]]
-				.group
+				.group.hide
 					.group__title= group[0]
 					each item in group[1]
 						.group__item
