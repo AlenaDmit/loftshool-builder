@@ -45,12 +45,11 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: black;
-	font-size: 0px;
 }
 .menu_item{
 	
 	transition: font-size .1s;
 	font-size: 20px;
-
-
+	text-align: center;
+	margin: 0 0 20px 0;
 }

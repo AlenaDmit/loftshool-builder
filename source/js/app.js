@@ -36,8 +36,8 @@ $(document).ready(function () {		// parallax
 		
 
 		if ($(".icon__item").hasClass("clicked")){
-			$(".menu__items").css("display", "none");
 			$(".icon__item").removeClass("clicked");
+			$(".menu__items").css("display", "none");
 			$(".layer_left").removeClass("active");
 			$(".layer_right").removeClass("active");
 			setTimeout(function(){$(".menu__layer_wrap").removeClass("active")}, 100);
