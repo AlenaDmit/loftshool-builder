@@ -63,7 +63,7 @@ function scroll(from,to){     // scroll to top/down
 
 //scrolls
 scroll($('.middle__button'), $('#slider'));
-scroll($('.form__top'), $('#header'));
+scroll($('.form__top-icon'), $('#header'));
 scroll($('.middle__button'), $('#slider'));
 
 

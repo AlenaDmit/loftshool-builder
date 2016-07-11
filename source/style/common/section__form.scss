@@ -172,12 +172,19 @@
 	transition: .3s;
 }
 
-.form__top{
+.form__top-icon{
+	text-align: center;
 	color: rgba(white, 0.5);
+
+
+	a{
+		font-size: 30px;
+		transition: color, .3s;
 		&:visited{
 			color: rgba(white, 0.5);
 		}
 		&:hover{
 			color: $blue;
 		}
+	}
 }
