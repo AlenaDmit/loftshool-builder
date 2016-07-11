@@ -1,4 +1,22 @@
-$(document).ready(function () {		// parallax
+$(document).ready(function () {		
+//scroll appearence
+// для появления элемента необходимо изначально задать ему класс hide
+	$(window).scroll(function (){ //срабатывает при каждом скролле
+		// hide - класс скрытых изначально элементолв - у них прозрачность на нуле
+		$(".hide").each(function(i){
+			var  objectBottom = $(this).offset().top + $(this).outerHeight()/3;
+			var windowBottom = $(window).scrollTop() + $(window).height();
+
+			// если объект в поле зрения, то постепенно увеличиваем прозрачность
+            if( windowBottom > objectBottom ){
+                
+                $(this).animate({'opacity':'1'},500);
+                    
+            }
+		});
+	})
+
+// parallax
   var layer = $('.parallax').find('.parallax__layer'); // Выбираем все parallax__layer в объект
   // console.log(layer);
   layer.map(function (key, value) { // Проходимся по всем элементам объекта
