@@ -173,18 +173,144 @@ function initMap() {	// google map
 }
 
 
-// function slider(){
-// 	$('.slider__control_up').on('click'(function(e) {
-// 		e.preventDefault();
+function slider(){     //  slider
+	var counterUp = 1;
+	var counterDown = 2;
+	var counterTxt = 1;
+	console.log($("li").is(":animated"));
+	$('.slider__control_up').click(function(e) {
+		e.preventDefault();
+		console.clear();
+		counterUp++;
+		counterDown++;
+		
 
-// 		var $this = $(this),
-// 			container = $this.closest('.slider__controls'),
-// 			items = container.find('.control__up-item'),
-// 			activeItem = container.find('selector')
-// 	});)
+		var $this = $(this),
+			container = $this.closest('.slider'),
+			itemsUp = container.find('.control__up-item'),
+			activeItemUp = container.find('.control__up-item.control_active_up'),
+
+			display = container.find('.slider__display').find('img'),
+
+			itemsDown = container.find('.control__down-item'),
+			activeItemDown = container.find('.control__down-item.control_active_down'),
+
+			blockTxt = container.find('.slider__left__text-item'),
+			blockTxtActive = container.find('.slider__left__text-item.active__text');
+
+		itemsUp.css('top', '100%');
+		activeItemUp.css('top', '0');
+		itemsDown.css('top', '-100%');
+		activeItemDown.css('top', '0');
+
+		counterUp = counterUp%itemsUp.length;
+		counterDown = counterDown%itemsUp.length;
+
+		if ($('.control__up-item.control_active_up:animated').length !=0){
+			console.log("animation in progress");
+			return;
+		}
 
 
-// }();
+		// console.log($('.control__up-item.control_active_up:animated'));
+		// console.log(itemsUp.eq(counterUp));
+		reqItem = itemsUp.eq(counterUp),
+		path = activeItemUp.find('img').attr('src'),
+		reqItemDown = itemsDown.eq(counterDown),
+		reqTxt = blockTxt.eq(counterTxt);
+
+		
+		activeItemUp.animate({'top': '-100%'}, 500);
+		// blockTxt.fadeOut('500', function() {
+		// });
+		reqItem.animate({'top': '0%'}, 500, 
+			function(){
+				activeItemUp.removeClass('control_active_up').css('top', '100%');
+				reqItem.addClass('control_active_up');
+				display.fadeOut('500', function() {
+					display.attr('src', path).fadeIn(500);
+				});
+				blockTxtActive.fadeOut('500', function(){
+					reqblockTxt.fadeIn('500');
+				});
+				blockTxtActive.removeClass('active__text');
+				reqTxt.addClass('active__text');
+			
+			});
+		
+		activeItemDown.animate({'top': '100%'}, 500);
+		reqItemDown.animate({'top': '0%'}, 500, 
+			function(){
+				activeItemDown.removeClass('control_active_down').css('top', '-100%');
+				reqItemDown.addClass('control_active_down');
+
+		});
+		
+		counterTxt++;
+
+	});
+
+	$('.slider__control_down').click(function(e) {
+		e.preventDefault();
+		console.clear();
+		counterUp--;
+		counterDown--;
+
+		var $this = $(this),
+			container = $this.closest('.slider'),
+			itemsUp = container.find('.control__up-item'),
+			activeItemUp = container.find('.control__up-item.control_active_up'),
+
+			display = container.find('.slider__display').find('img');
+
+			itemsDown = container.find('.control__down-item'),
+			activeItemDown = container.find('.control__down-item.control_active_down');
+
+		itemsUp.css('top', '-100%');
+		activeItemUp.css('top', '0');
+		itemsDown.css('top', '100%');
+		activeItemDown.css('top', '0');
+
+		if (counterDown < 0)
+			counterDown = itemsUp.length - 1;
+		if (counterUp < 0)
+			counterUp = itemsUp.length - 1;
+
+		if ($('.control__up-item.control_active_up:animated').length !=0){
+			console.log("animation in progress");
+			return;
+		}
+
+
+		reqItem = itemsDown.eq(counterDown),
+		path = activeItemDown.find('img').attr('src'),
+		reqItemUp = itemsUp.eq(counterUp);
+
+		
+		activeItemUp.animate({'top': '100%'}, 500);
+		reqItemUp.animate({'top': '0%'}, 500, 
+			function(){
+				activeItemUp.removeClass('control_active_up').css('top', '-100%');
+				reqItemUp.addClass('control_active_up');
+				display.fadeOut('500', function() {
+					display.attr('src', path).fadeIn(500);
+				});
+			});
+		
+		activeItemDown.animate({'top': '-100%'}, 500);
+		reqItem.animate({'top': '0%'}, 500, 
+			function(){
+				activeItemDown.removeClass('control_active_down').css('top', '100%');
+				reqItem.addClass('control_active_down');
+
+		});
+		
+
+
+	});
+
+}
+slider();
 
 
 // mainBlockApp();
