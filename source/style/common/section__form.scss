@@ -1,11 +1,29 @@
 .section__form{
-	min-height: 1355px;
 	background-image: url("../img/myworks-bg-form.png");
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: -$footer-height;
 	padding-top: 50px;
+	padding-bottom: $footer-height + 50px;
+
+	@include tablets{
+		padding: 0 0 280px 0;
+		margin: 0 0 -218px 0;
+	}
+
+	@include laptop{
+		margin: 0 0 -218px 0;
+	}
+
+	@include phones{
+		margin-bottom: -$footer-height-phones;
+		padding-bottom: $footer-height-phones + 50px;
+	}
+}
+
+.section__form_wrap{
+	padding: 40px 10px 0 10px;
 }
 
 .section__form_head{
@@ -33,19 +51,19 @@
 .section__form_quotes{
 	display: block;
 	text-align: center;
-	margin-bottom: 70px;
+	margin: 0 0 70px 0;
 }
 
 .quotes__block{
 	display: inline-block;
-	margin-right: 10px;
+	margin: 0 10px 30px 0;
 }
 
 .quotes__block_txt{
 	color: white;
 	@include robotoI();
-	max-width: 390px;
-	margin-bottom: 20px;
+	max-width: 360px;
+	margin: 0 0 20px 0;
 
 	&:before{
 		content: "\f10d";
@@ -53,13 +71,13 @@
 		color: rgba(white, .2);
 		font-size: 80px;
 		position: absolute;
-		margin-top: -30px;
+		margin: -30px 0 0 0;
 	}
 }
 
 .quotes__block_img{
 	display: block;
-	margin-bottom: 10px;
+	margin: 0 0 10px 0;
 }
 
 .quotes__block_img-item{
@@ -87,7 +105,8 @@
 .form__wrap{
 	display: block;
 	margin: auto;
-	width: 380px;
+	max-width: 380px;
+	width: 100%;
 	background: rgba(white, .1);
 	padding-top: 30px;
 	box-sizing: border-box;
@@ -130,6 +149,11 @@
 	font-size: 16px;
 	box-sizing: border-box;
 	cursor: pointer;
+
+	@include phones{
+		width: 90%;
+		margin: 0px 0px 20px 0px;
+	}
 }
 
 .form__msg{
@@ -180,8 +204,9 @@
 	a{
 		font-size: 30px;
 		transition: color, .3s;
+		color: rgba(white, .5);
 		&:visited{
-			color: rgba(white, 0.5);
+			color: rgba(white, .5);
 		}
 		&:hover{
 			color: $blue;

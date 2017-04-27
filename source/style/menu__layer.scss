@@ -15,7 +15,7 @@
 	height: 100%;
 	width: 50%;
 	position: absolute;
-	background-color: rgba(white, 0.9);
+	background-color: rgba(#183669, 0.9);
 	transition: right .5s, left .5s;
 }
 
@@ -52,17 +52,51 @@
 	color: black;
 }
 .menu_item{
-	
 	transition: font-size .1s;
 	font-size: 20px;
 	transform: scale(0);
 	text-align: center;
 	text-transform: uppercase;
-
+	transition: background-color .5s;
 	
 	&.active{
-
 		transition: transform .5s;
 		transform: scale(1);
+		// &:after{
+		// 	display: block;
+		// 	height: 3px;
+		// 	width: 90px;
+		// 	background-color: white;
+		// 	content: '';
+		// 	margin: auto;
+		// }
+	}
+
+	&:after{
+			display: block;
+			height: 3px;
+			width: 90px;
+			background-color: transparent;
+			content: '';
+			margin: auto;
+		}
+
+	&:hover{
+		&:after{
+			display: block;
+			height: 3px;
+			width: 90px;
+			background-color: white;
+			content: '';
+			margin: auto;
+			transition: background-color .5s;
+		}
+	}
+
+	a{
+		color: white;
+		@include sansus();
+		font-size: 63px;
+
 	}
 }
