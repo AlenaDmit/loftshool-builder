@@ -1,17 +1,24 @@
 // layouts
-@import "common/variables";
-@import "adjustment";
-@import "common/mixins";
-@import "common/fonts";
-@import "common/font-awesome";
-@import "common/font-icomoon";
+// @import "common/variables";
+// @import "adjustment";
+// @import "common/mixins";
+// @import "common/fonts";
+// @import "common/font-awesome";
+// @import "common/font-icomoon";
 
 
-// styles
+// // styles
+// @import "common/header";
+// @import "common/footer";
+// @import "common/section__form";
+// @import "common/slider";
+// @import "common/index";
+// @import "common/section__skills";
 
-@import "common/header";
-@import "common/footer";
-@import "common/section__form";
-@import "common/slider";
-@import "common/index";
-@import "common/section__skills";
+.hide{
+  opacity: 0;
+}
+
+
+// media
+// @import "common/media";

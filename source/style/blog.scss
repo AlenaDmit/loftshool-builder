@@ -10,6 +10,7 @@
 @import "common/header";
 @import "common/section__blog";
 @import "common/footer";
+@import "menu__layer";
 
 .header__triangle{
 	opacity: 1;
@@ -58,4 +59,3 @@
 
 .header__button-next{
 	display: none;
-}

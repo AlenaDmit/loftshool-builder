@@ -5,12 +5,14 @@
 @import "common/fonts";
 @import "common/font-awesome";
 @import "common/font-icomoon";
+@import "common/media";
 
 //styles
 @import "common/header";
 @import "common/section__skills";
 @import "common/footer";
 @import "common/section__map";
+@import "menu__layer";
 
 .header__triangle{
 	opacity: 1;
@@ -22,6 +24,10 @@
 
 .polygon__right{
 	fill: #eae8e2;
+
+	@include tablets{
+		fill: #f2f0e8;
+	}
 }
 
 .header__works{
@@ -31,6 +37,11 @@
 .header__works_stars2{
 	margin-left: -37px;
 	left: 0;
+
+	@include desktop{
+		margin-left: 0;
+		left: none;
+	}
 }
 
 .stars2_line{
@@ -40,4 +51,8 @@
 .works__txt{
 	color: $grey;
 	text-align: left;
+
+	@include tablets{
+
+	}
 }
