@@ -37,3 +37,6 @@ build
 # Node.JS
 node_modules
 npm-debug.log
+
+
+./gulp/config.js

@@ -32,6 +32,7 @@ for (var i = articles.length - 1; i >= 0; i--) {
 			console.clear();
 			$(".wp"+this.element.getAttribute("wp_index")).addClass("active");
 		},
+		offset: 100
 	})
 };
 

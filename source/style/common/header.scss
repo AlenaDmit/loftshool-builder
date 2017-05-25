@@ -1,16 +1,19 @@
 .header{
 	min-height: 750px;
 	height: 100vh;
-	// max-height: 800px;
 	background-image: url("../img/bg.png");
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+
+	@include laptop{
+		min-height: 640px;
+	}
 }
 
 .header__wrap{
-	padding: 25px 20px 0 20px;
+	padding: 25px 30px 0 30px;
 	position: relative;
 }
 
@@ -18,11 +21,12 @@
 	display: block;
 	height: 100%;
 	@extend %clearfix;
-	margin-bottom: 100px;
+	margin-bottom: 90px;
 }
 
 .header__socials{
 	float: left;
+	margin-top: -10px;
 }
 
 .header__socials_link{
@@ -42,20 +46,50 @@
 }
 
 .header__menu{
-	float: right;
+	// float: right;
+	position: absolute;
+	right: 30px;
+	z-index: 10;
+	&:hover{
+		cursor: pointer;
+		.icon__item{
+			background-color: $blue;		
+		}
+	}
 }
 
-.header__menu_icon{
-	color: rgba(white, .8);
+.icon__item{
+	// color: rgba(white, .8);
 	font-size: 30px;
 	display: block;
 	width: 30px;
-	margin: auto;
-	transition: color .3s;
-
-	&:hover{
-		color: $blue;
+	height: 5px;
+	margin: 0 0 5px 0;
+	
+	&:last-child{
+		margin: 0 0 0 0;
 	}
+	
+	background-color: rgba(white, .8);
+	border-radius: 2px;
+	transition: background-color .5s, opacity 1s, transform .5s;
+	
+	&.clicked{
+		margin-left: -2px;
+		transition: transform .5s;
+		&:first-child{
+			transform: translateY(-1px) rotateZ(-45deg) translateX(-50%) ;
+		}
+
+		&:nth-child(2){
+			opacity: 0;
+		}
+
+		&:last-child{
+			transform: rotateZ(45deg) translateX(-50%) ;
+		}
+	}
+
 }
 
 .header__author{
@@ -71,6 +105,12 @@
 		left: 50%;
 		margin-left: -100px;
 		top: 20%;
+	}
+
+	@include phones{
+		&:before{
+			transform: scale(1.7);
+		}
 	}
 }
 
@@ -94,7 +134,7 @@
 	max-height: 140px;
 	max-width: 140px;
 	border-radius: 50%;
-	z-index: 999;
+	// z-index: 999;
 }
 
 .header__author_name{
@@ -112,15 +152,13 @@
 
 .header__button-next{
 	font-size: 30px;
-	// color: rgba(white, 0.5);
 	width: 100%;
 	margin: auto;
 	text-align: center;
-	transition: color .3s;
-	z-index: 999;
 	cursor: pointer;
 
 	a{
+		transition: color .3s;
 		color: rgba(white, 0.5);
 		&:visited{
 			color: rgba(white, 0.5);
@@ -128,6 +166,10 @@
 		&:hover{
 			color: $blue;
 		}
+
+	@include laptop{
+		bottom: -60px;
+	}
 	}
 
 }
@@ -160,6 +202,10 @@
 	opacity: .8;
 	position: absolute;
 	bottom: 0;
+
+	@include phones{
+		height: 230px;
+	}
 }
 
 
@@ -184,10 +230,20 @@
 .header__works_stars2{
 	position: absolute;
 	bottom: 0;
-	width: 265px;
+	width: auto;
 	height: 175px;
 	margin-left: -133px;
 	transform: rotate(185deg);
+
+	@include phones{
+		height: 145px;
+	}
+
+	@include desktop{
+		position: static;
+		bottom: none;
+		margin-left: 0;
+	}
 }
 
 .stars2_line{

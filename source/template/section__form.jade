@@ -1,23 +1,23 @@
 .wrapper
 	section.section__form
 		.section__form_wrap
-			.section__form_head что обо мне говорят
+			.section__form_head.hide что обо мне говорят
 			.section__form_quotes
-				.quotes__block
+				.quotes__block.hide
 					.quotes__block_img
 						img(src="assets/img/dima.png").quotes__block_img-item
-					.quotes__block_txt Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					.quotes__block_txt Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
 					.quotes__block_peoples
 						.quotes__block_name Ковальчук Дмитрий
 						.quotes__block_post — основатель Loftschool
-				.quotes__block
+				.quotes__block.hide
 					.quotes__block_img
 						img(src="assets/img/zar.png").quotes__block_img-item
 					.quotes__block_txt Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
 					.quotes__block_peoples
 						.quotes__block_name Зар Захаров 
 						.quotes__block_post — главный преподаватель
-			.form__wrap
+			.form__wrap.hide
 				form.form
 					.form__text Связаться со мной
 					.form__line _____
@@ -26,5 +26,5 @@
 					textarea(name="msg" placeholder="Ваше сообщение").form__msg
 					button(type="submit").form__submit.form__button Отправить
 					button(type="reset").form__clear.form__button Очистить
-		.header__menu_icon
-			a(href="#header").fa.form__top &#xf077;
+		.form__top-icon
+			a(href="#header").fa &#xf077;

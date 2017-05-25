@@ -3,58 +3,263 @@
 	width: 100%;
 	display: block;
 	position: absolute;
+	@include tablets{
+		height: $footer-height-tablets;
+	}
+
+	@include laptop{
+		height: $footer-height-tablets;
+	}
+
+	@include phones{
+		height: $footer-height-phones;
+	}
 }
 
 .footer__top{
 	width: 100%;
 	min-height: 147px;
 	background-color: rgba(#0d1120, .8);
-	padding-top: 30px;
+	padding: 30px;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	@extend %clearfix;
+	@include tablets{
+		display: block;
+		padding: 20px;
+
+	}
+
+	@include laptop{
+		display: block;
+		padding: 20px;
+	}
+
+	@include phones{
+		padding: 20px 20px 10px 20px;
+	}
 }
 
 .footer__top_block{
 	color: white;
-	float: left;
 	width: calc(100%/3);
-	padding: 0 30px 0 30px;
 	min-height: 90px;
-	box-sizing: border-box;
-	border-left: 2px solid rgba(white, .3);
+	margin: 0 30px 0 0;
+	position: relative;
+	
+	&:after{
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: block;
+		width: 2px;
+		height: 90px;
+		background-color: rgba(white, .3);
+	}
 
-	&:first-child{
-		border: none;
+	&:last-child{
+		&:after{
+			content: '';
+			display: none;
+		}
+	}
+
+	@include desktop{
+		width: 100%;
+		&:last-child{
+			width: initial;
+		}
+	}
+
+
+	@include tablets{
+		display: inline-block;
+		min-height: 100%;
+		&:after{
+			content: '';
+			display: none;
+		}
+		&:first-child{
+			display: block;
+			text-align: center;
+		}
+	}
+
+	@include laptop{
+		display: inline-block;
+		min-height: 100%;
+		&:after{
+			content: '';
+			display: none;
+		}
+		&:first-child{
+			display: block;
+			text-align: center;
+		}
+	}
+
+	@include phones{
+		display: block;
+
+	}
+}
+
+#nav{
+	@include tablets{
+		display: inline;
+		margin: 0;
+	}
+
+	@include laptop{
+		display: inline;
+		margin: 0;
+	}
+
+	@include phones{
+		display: block;
+		text-align: center;
+		margin: 0 0 10px 0;
+		position: relative;
+		// height: 40px;
+		&:after{
+			content: '';
+			display: block;
+			position: relative;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgba(white, .3);
+		}
+	}
+}
+
+#contacts{
+	@include tablets{
+		float: right;
+		margin: 0;
+	}
+
+	@include laptop{
+		float: right;
+		margin: 0;
+	}
+
+	@include phones{
+		display: block;
+		text-align: center;
+		float: none;
+	}
+}
+
+.footer__top__block_nav{
+	@include tablets{
+		display: inline-block;
+	}
+
+	@include laptop{
+		display: inline-block;
+	}
+
+	@include phones{
+		width: 100%;
+		margin: 0 0 10px 0;
 	}
 }
 
 .footer__top__block_nav-menu{
-	margin-bottom: 30px;
+	margin: 0 0 30px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	@include tablets{
+		justify-content: flex-start;
+		margin: 0 0 10px 0;
+	}
+
+	@include laptop{
+		justify-content: center;
+		margin: 0 0 10px 0;
+	}
+
+}
+
+.footer__top__block_nav-socials{
+	display: block;
+	text-align: center;
 }
 
 .footer__link{
 	@include robotoB();
-	font-size: 16px;
-	margin-right: 40px;
+	margin: 0 30px 0 0;
 	color: rgba(white, .8);
 	transition: color .3s;
+	white-space: nowrap;
 
 	&:hover{
 		color: $blue;
+	}
+	
+	&:last-child{
+		@include phones{
+			margin: 0;
+		}
 	}
 }
 
 .footer__top__block_txt{
 	@include robotoL();
-	font-size: 16px;
 	height: inherit;
 	color: rgba(white, .8);
+	margin: 0 30px 0 0;
+
+	@include tablets {
+		margin: 0 0 20px 0;
+		position: relative;
+		height: 40px;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgba(white, .3);
+		}
+	}
+
+	@include laptop{
+		margin: 0 0 20px 0;
+		position: relative;
+		height: 40px;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgba(white, .3);
+		}
+	}
+
+	@include phones{
+		display: block;
+		padding: 0 0 10px 0;
+
+	}
 }
 
 .footer__socials_link{
 	font-size: 30px;
 	color: rgba(white, .8);
 	transition: color .3s;
-	margin-right: 30px;
+	margin: 0 30px 0 0;
 
 	&:hover{
 		color: $blue;
@@ -63,16 +268,35 @@
 
 .footer__top_block-contacts{
 	@include robotoL();
-	font-size: 16px;
 	color: rgba(white, .8);
 }
 
 .footer__bottom{
-	display: block;
-	text-align: center;
-	line-height: 38px;
-	background-color: rgba($blue, .8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 40px; 
+	background-color: rgba($blue, .7);
 	@include robotoL();
-	font-size: 16px;
 	color: rgba(white, .8);
+
+	@include laptop{
+		min-height: 35px;
+	}
+
+	@include tablets{
+		min-height: 43px;
+	}
+
+	@include phones{
+		height: 72px;
+		padding: 10px;
+		text-align: center;
+		box-sizing: border-box;
+	}
+}
+
+.footer__bottom-text{
+
 }
