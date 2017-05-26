@@ -26,6 +26,64 @@
 	padding: 40px 10px 0 10px;
 }
 
+
+// slider
+
+.form__whyme {
+	text-align: center;
+	margin: 0 0 50px;
+}
+
+.whyme__header{
+	color: white;
+	font-size: 35px;
+	@include robotoM();
+	margin: 0 0 30px;
+	text-transform: uppercase;
+}
+
+.whyme__slider{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	margin: auto;
+}
+
+.whyme-prev{
+	font-family: "FontAwesome";
+	font-size: 100px;
+	color: white;
+	cursor: pointer;
+}
+
+.whyme-next{
+	content: "\f105";
+	font-family: "FontAwesome";
+	font-size: 100px;
+	color: white;
+	cursor: pointer;
+}
+
+.whyme__videos{
+	overflow-x: hidden;
+	width: 853px;
+}
+
+.videos-list{
+	width: 853px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+}
+
+.videos-item{
+	display: inline-block;
+	width: 853px;
+	transition: all 0.3s;
+}
+
 .section__form_head{
 	@include sansus();
 	font-size: 63px;
