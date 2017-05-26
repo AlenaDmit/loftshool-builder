@@ -1,22 +1,36 @@
 .wrapper
 	section.section__form
 		.section__form_wrap
-			.section__form_head.hide что обо мне говорят
-			.section__form_quotes
-				.quotes__block.hide
-					.quotes__block_img
-						img(src="assets/img/dima.png").quotes__block_img-item
-					.quotes__block_txt Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-					.quotes__block_peoples
-						.quotes__block_name Ковальчук Дмитрий
-						.quotes__block_post — основатель Loftschool
-				.quotes__block.hide
-					.quotes__block_img
-						img(src="assets/img/zar.png").quotes__block_img-item
-					.quotes__block_txt Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-					.quotes__block_peoples
-						.quotes__block_name Зар Захаров 
-						.quotes__block_post — главный преподаватель
+			.form__whyme.hide
+				.whyme__header
+					span Почему я?
+				.whyme__slider
+					span.fa.whyme-prev
+						&#xf104;
+					//.whyme__videos
+					ul(current_tab=0).videos-list
+						li.videos-item
+							iframe(width="853" height="480" src="https://www.youtube.com/embed/x_Iw1SiX2xQ" frameborder="0" allowfullscreen)
+						li.videos-item
+							iframe(width="853" height="480" src="https://www.youtube.com/embed/pz9PQNsh27g" frameborder="0" allowfullscreen)
+					span.fa.whyme-next
+						&#xf105;
+			//.section__form_head.hide что обо мне говорят
+			//.section__form_quotes
+			//	.quotes__block.hide
+			//		.quotes__block_img
+			//			img(src="assets/img/dima.png").quotes__block_img-item
+			//		.quotes__block_txt Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+			//		.quotes__block_peoples
+			//			.quotes__block_name Ковальчук Дмитрий
+			//			.quotes__block_post — основатель Loftschool
+			//	.quotes__block.hide
+			//		.quotes__block_img
+			//			img(src="assets/img/zar.png").quotes__block_img-item
+			//		.quotes__block_txt Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+			//		.quotes__block_peoples
+			//			.quotes__block_name Зар Захаров
+			//			.quotes__block_post — главный преподаватель
 			.form__wrap.hide
 				form.form
 					.form__text Связаться со мной
