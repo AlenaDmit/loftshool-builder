@@ -318,6 +318,39 @@ function slider(){     //  slider
     });
 
 }
+
+// slider why me
+const YSlider = (()=>{
+    const btnPrev = document.querySelector('.whyme-prev');
+    const btnNext = document.querySelector('.whyme-next');
+    const videosList = document.querySelector('.videos-list');
+
+
+    const listLength = videosList.childElementCount;
+    const firstInList = videosList.firstElementChild;
+    const itemWidth = -firstInList.clientWidth;
+    let currentTab = parseInt(videosList.getAttribute("current_tab"));
+
+    btnNext.addEventListener('click', ()=>{
+        if(listLength-1 === currentTab)
+            return;
+        currentTab++;
+        videosList.setAttribute("current_tab", currentTab );
+        firstInList.style.marginLeft = `${currentTab * itemWidth}px`
+    });
+
+    btnPrev.addEventListener('click', ()=>{
+        if (parseInt(videosList.getAttribute("current_tab")) === 0)
+            return;
+        currentTab--;
+        videosList.setAttribute("current_tab", currentTab);
+        firstInList.style.marginLeft = `${currentTab * itemWidth}px`
+
+    });
+
+})();
+
+
 slider();
 
 // mainBlockApp();
