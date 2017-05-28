@@ -1,44 +1,11 @@
-.slider__wrap#slider
-	section.slider
-		.slider__left
-			.slider__display.hide
-				img(src="assets/img/site1.png")
-			ul.slider__left__text.hide
-				li.slider__left__text-item.active__text
-					.slider__left__text_head Landing page
-					.slider__left__text_text HTML, CSS, JAVASCRIPT
-					a(href="http://cm92579.tmweb.ru/4/index.html" target="_blank").slider__left__text_button
-						span.fa &#xf0c1; 
-						.slider__left__text_button-item Посмотреть сайт
-				li.slider__left__text-item
-					.slider__left__text_head Site portfolio
-					.slider__left__text_text HTML, CSS, JAVASCRIPT
-					a(href="http://cm92579.tmweb.ru/3/index.html").slider__left__text_button
-						span.fa &#xf0c1; 
-						.slider__left__text_button-item Посмотреть сайт
-				li.slider__left__text-item
-					.slider__left__text_head Cart JS
-					.slider__left__text_text HTML, CSS, ES6
-					a(href="#").slider__left__text_button
-						span.fa &#xf0c1; 
-						.slider__left__text_button-item Посмотреть сайт
-		.slider__right.hide
-
-			.slider__controls.hide
-				a(href="#").slider__controls-item.slider__control_up
-					ul.control__up-list
-						li.control__up-item
-							img(src="assets/img/site1.png")
-						li.control__up-item.control_active_up
-							img(src="assets/img/site2.png")
-						li.control__up-item
-							img(src="assets/img/site3.png")
-				a(hfref="#").slider__controls-item.slider__control_down
-					ul.control__down-list
-						li.control__down-item
-							img(src="assets/img/site1.png")
-						li.control__down-item
-							img(src="assets/img/site2.png")
-						li.control__down-item.control_active_down
-							img(src="assets/img/site3.png")
-					
+.slider__wrap#slider(current_slide=0)
+    section.left
+        ul
+    section.right
+        section#current_slide
+            ul
+        section#slider_controls
+            button.slider_control__item#next_slide
+                ul
+            button.slider_control__item#previous_slide
+                ul

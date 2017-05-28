@@ -1,0 +1,313 @@
+@mixin centered() {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.slider__wrap{
+}
+
+.slider{
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	// min-height: 650px;
+
+	// height: 100%;
+	@extend %clearfix;
+	// width: 100%;
+	@include tablets{
+		// height: 920px;
+	}
+	@include phones {
+		min-height: auto;
+	}
+}
+
+.slider__left{
+	float: left;
+	display: block;
+	background-color: #f2f0e8;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	position: relative;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+
+		@include tablets {
+			display: none;
+		}
+	}
+
+	@include tablets {
+		float: none;
+		width: 100%;
+		display: block;
+		// max-height: 270px;
+		height: 75vh;
+	}
+	@include phones{
+		// display: none;
+	}
+}
+
+.slider__left__text{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 90%;
+	// display: none;
+}
+
+.slider__left__text-item{
+	display: none;
+}
+
+.slider__left__text-item.active__text{
+	display: inline-block;
+}
+
+.slider__left__text_head{
+	font-size: rem(35px);
+	@include sansus();
+	color: #474b57;	
+	text-transform: uppercase;
+ 	margin: 30px 0 30px 0;
+
+	@include tablets{
+		margin: 10px 0 10px 0;
+	}
+	@include phones {
+		margin: 5px 0 5px 0;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: 90px;
+		height: 3px;
+		background-color: #9c9c9a;
+		margin: auto;
+		margin-top: 30px;
+		@include tablets {
+			margin-top: 10px;
+		}
+		@include phones {
+			margin-top: 5px;
+		}
+	}
+}
+
+// .slider__left__text_line{
+// 	color: #9c9d9f;
+// 	font-size: 20px;
+// 	@include robotoB();
+// 	margin-bottom: 20px;
+// }
+
+.slider__left__text_text{
+	color: $blue;
+	// font-size: rem(16px);
+	@include robotoM();
+	text-transform: uppercase;
+	margin: 0 0 60px 0;
+
+	@include tablets{
+		margin: 0 0 20px 0;
+	}
+
+	@include phones{
+		margin: 0 0 5px 0;	
+	}
+}
+
+
+.slider__left__text_button{
+	background: $blue;
+	padding: 13px;
+	cursor: pointer;
+	margin: auto; 
+	display: inline-block;
+	transition: background .3s;
+	
+	&>span{
+		display: inline-block;
+		color: white;
+		margin-right: 5px;
+	}
+
+	&:hover{
+		background: rgba($blue, .7);
+	}
+}
+
+.slider__left__text_button-item{
+	display: inline-block;
+	color: white;
+	@include robotoM();
+}
+
+
+.slider__right{
+	float: left;
+	@extend %clearfix;
+	width: 50%;
+	height: 100%;
+	background-color: #e3e2de;
+	position: relative;
+
+	@include tablets {
+		float: none;
+		width: 100%;
+		height: auto;
+		position: absolute;
+	}
+}
+
+.slider__controls{
+	height: 30%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	@include tablets {
+		position: absolute;
+		height: 220px;
+		height: 25vh;
+		position: relative;
+	}
+
+	@include phones{
+	}
+}
+
+.slider__controls-item{
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	
+	ul{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		li{
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+
+			img {
+				max-width: 90%;
+				max-height: 90%;
+				user-select: none;
+				@include centered();
+			}	
+		}
+	}
+	
+	&:before{
+		font-family: "FontAwesome";
+		font-size: 80px;
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		color: white;
+		text-align: center;
+		z-index: 2;
+		background-color: rgba(black,.3);
+		transition: background-color .3s, font-size .3s;
+		// padding: 30% 0 0 0;
+	}
+}
+
+.control__down-item {
+	top: -100%;
+}
+
+.control__up-item {
+	top: 100%;
+}
+
+.control__up-item.control_active_up{
+	top: 0;
+}
+
+.control__down-item.control_active_down{
+	top: 0;
+}
+
+
+
+.slider__control_up:before{
+	content: "\f104";
+	position: absolute;
+}
+.slider__control_down:before{
+	content: "\f105";
+	position: absolute;
+}
+
+.slider__controls-item:hover:before{
+	cursor: pointer;
+	background-color: rgba(black, .5);
+	font-size: 90px;
+}
+
+.slider__display {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 70%;
+
+	@include tablets {
+		position: static;
+		// height: auto;
+	}
+
+	@include phones{
+		height: 100%;
+		max-height: 250px;
+	}
+
+
+	img {
+
+		max-width: 90%;
+		max-height: 90%;
+		user-select: none;
+		@include centered();
+
+		@include tablets {
+			position: static;
+			padding-top: 40px;
+			max-width: 80%;
+			max-height: 80%;
+		}
+
+		@include phones {
+			padding: 40px 0 0 0;
+		}
+	}
+}
