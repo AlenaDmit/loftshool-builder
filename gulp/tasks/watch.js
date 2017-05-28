@@ -3,6 +3,7 @@
 module.exports = function() {
   $.gulp.task('watch', function() {
     $.gulp.watch('./source/js/**/*.js', $.gulp.series('js.process'));
+    $.gulp.watch('./source/js/**/*.js', $.gulp.series('js.excellentSlider'));
     $.gulp.watch('./source/js/**/*.js', $.gulp.series('js.blog'));
     $.gulp.watch('./source/js/**/*.js', $.gulp.series('js.preload'));
     $.gulp.watch('./source/style/**/*.scss', $.gulp.series('sass'));
